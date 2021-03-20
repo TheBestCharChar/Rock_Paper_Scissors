@@ -1,0 +1,1 @@
+This is the FOUNDATIONS PROJECT: Rock Paper Scissors of the ODIN Project. 
