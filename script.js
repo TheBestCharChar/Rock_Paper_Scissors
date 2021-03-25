@@ -36,62 +36,62 @@ let playerScore = 0;
 let gameEnd = 5;
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = 'rock'; //prompt('Please enter in your weapon of choice!').toLowerCase();
+    playerSelection = prompt('Please enter in your weapon of choice!').toLowerCase();
     computerPlay(); //* it's a good idea to assign the value to a variable, whatever it is. Within the context of the round, you'll want that same string
     if (playerSelection === 'rock') {
         if (computerSelection === 'rock') {
-            // console.log("Tie! No score");
+            console.log(`Player's ${playerSelection} = Computer's ${computerSelection}`)
             playerScore += 0;
             computerScore += 0;
 
         } else if (computerSelection === "scissors") {
-            // console.log(`You Win! Humans Rock! Player's ${playerSelection} beats computer's ${computerSelection}`);
+            console.log(`Player's ${playerSelection}> Computer's ${computerSelection}`)
             playerScore += 1;
             computerScore += 0;
         } else {
-            // console.log(`You LOST! Computer's ${computerSelection} beats players ${playerSelection}`);
+            console.log(`Player's ${playerSelection}< Computer's ${computerSelection}`)
             computerScore += 1;
             playerScore += 0;
         }
-        //if computer equals scissors, you win
-        //if not... you lose
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'paper') {
-            // console.log("Tie! No score");
+            console.log(`Player's ${playerSelection}= Computer's ${computerSelection}`)
             playerScore += 0;
             computerScore += 0;
         } else if (computerSelection === "rock") {
-            // console.log(`You Win! Humans Win! Player's ${playerSelection} beats computer's ${computerSelection}`);
+            console.log(`Player's ${playerSelection}> Computer's ${computerSelection}`)
             playerScore += 1;
             computerScore += 0;
         } else {
-            // console.log(`You LOST! Computer's ${computerSelection} beats players ${playerSelection}`);
+            console.log(`Player's ${playerSelection}< Computer's ${computerSelection}`)
             computerScore += 1;
             playerScore += 0;
         }
     } else { //last if is unnecessary because there can only be 3 choices (last option is scissors)
         if (computerSelection === 'scissors') {
-            // console.log("Tie! No score");
+            console.log(`Player's ${playerSelection}= Computer's ${computerSelection}`)
             playerScore += 0;
             computerScore += 0;
         } else if (computerSelection === "paper") {
-            // console.log(`You Win! Humans Win! Player's ${playerSelection} beats computer's ${computerSelection}`);
+            console.log(`Player's ${playerSelection}> Computer's ${computerSelection}`)
             playerScore += 1;
             computerScore += 0;
         } else {
-            // console.log(`You LOST! Computer's ${computerSelection} beats players ${playerSelection}`);
+            console.log(`Player's ${playerSelection}< Computer's ${computerSelection}`)
             computerScore += 1;
             playerScore += 0;
         }
     }
-    console.log(roundWon());
+    // console.log(roundWon());
 }
 
 function roundWon() { //* Who won the round?
     if (parseInt(playerScore) > parseInt(computerScore)) {
-        return `Player wins! Computer Loses`
+        return `Player is winning! Computer is losing!`
+    } else if (parseInt(playerScore) < parseInt(computerScore)) {
+        return `Computer Winning! Player Losing`
     } else {
-        return `Computer wins! Player Loses`
+        return `Currently tied!`
     }
 
 }
@@ -100,24 +100,22 @@ function roundWon() { //* Who won the round?
 
 function isGameOver() { //*check to see if either player or computer has reached 5
     if (playerScore === 5 || computerScore === 5) {
+        if (playerScore === 5) {
+            console.log(`Player wins with score of ${playerScore}!`)
+            return;
+        } else if (computerScore === 5) {
+            console.log(`Computer wins with score of ${computerScore}!`)
+            return;
+        }
         return false;
     } else {
         return true;
     }
 }
 
-// console.log(playRound(player, computerPlay()));
-// playRound(player, computerPlay());
-// console.log(playRound(player, computerPlay()))
-
-// for (let i = 0; i <= 5; i++) {
-//     playRound(player, computerPlay())
-//     console.log(`player's score is ${playerScore}`);
-//     console.log(`Computer's score is ${computerScore}`);
-// }
-
 while (isGameOver()) {
     playRound(player, computerPlay());
+    console.log(roundWon());
     console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
 }
 
