@@ -9,7 +9,38 @@
 </head>
 
 <body>
-    <script src="script.js"></script>
+    <div class="overallScore">
+        <h1>Overall Score</h1>
+        <div class="playerOverallScore">
+            <h2>Player Score</h2>
+        </div>
+        <div class="computerOverallScore">
+            <h2>Computer Score</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="round">
+        <div class="roundSelection">
+            <h3>Round <span class="numRounds">0</span></h3>
+            <h4>Player's <input type="text" placeholder="Player Selection"></h4>
+            <h4>Computer's <input type="text" placeholder="Computer Selection"></h4>
+        </div>
+        <div class="roundOutcome">
+            <p>Player's Rock beats Computer's Scissors</p>
+        </div>
+    </div>
+    <div class="playerButtons">
+        <button>Rock</button>
+        <button>Paper</button>
+        <button>Scissors</button>
+    </div>
+    <hr>
+    <div class="navigationButtons">
+        <button class="resetBtn">Reset</button>
+        <button class="nextRoundBtn">Next Round</button>
+    </div>
+
+    <script src="adv_script.js"></script>
 </body>
 
 </html>
