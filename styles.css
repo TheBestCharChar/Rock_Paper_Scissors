@@ -1,0 +1,12 @@
+#overallScore {
+    /* background-color: rgb(182, 68, 16); */
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    list-style-type: none;
+}
+
+#overallScore li {
+    margin: 50px;
+}
