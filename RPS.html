@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors TOP Project</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -32,24 +34,26 @@
         </div>
         <hr>
         <div class="round">
-            <div class="roundSelection">
-
-                <h4>Player's <input type="text" placeholder="Player Selection"></h4>
-                <h4>Computer's <input type="text" placeholder="Computer Selection"></h4>
-            </div>
             <div>
                 <p class="roundOutcome"></p>
             </div>
-        </div>
-        <div class="playerButtons">
-            <button id="rockBtn">Rock</button>
-            <button id="paperBtn">Paper</button>
-            <button id="scissorsBtn">Scissors</button>
+
+            <div class="roundSelection">
+
+                <div class="playerButtons">
+                    <h4>Choose your weapon!</h4>
+                    <button id="rockBtn">Rock</button>
+                    <button id="paperBtn">Paper</button>
+                    <button id="scissorsBtn">Scissors</button>
+                </div>
+                <div class="computerSelection">
+                    <h4>Computer Chooses <span class="computerChoice"></span></h4>
+                </div>
+            </div>
         </div>
         <hr>
         <div class="navigationButtons">
             <button class="resetBtn">Reset</button>
-            <button class="nextRoundBtn">Next Round</button>
         </div>
     </div>
     <script src="adv_script.js"></script>

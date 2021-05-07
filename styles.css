@@ -129,6 +129,23 @@ table {
     border-spacing: 0;
 }
 
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.rpsScreen {
+    background-color: aquamarine;
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 1em auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
 #overallScore {
     /* background-color: rgb(182, 68, 16); */
     margin: 0 auto;
@@ -141,6 +158,11 @@ table {
 
 #overallScore li {
     margin: 50px;
+}
+
+.roundSelection {
+    display: flex;
+
 }
 
 .playerWinsScore,

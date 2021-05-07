@@ -36,13 +36,13 @@ let tiesCount = document.querySelector('.numberTies')
 let gameOverDiv = document.createElement('h3');
 gameOverDiv.innertext = '';
 const overallScore = document.querySelector('#overallScore');
+let computerChoice = document.querySelector('.computerChoice');
 
 //button event listeners to play round
 rockBtn.addEventListener('click', (e) => {
     // console.log(e);
     playRound(e.target.innerText, computerPlay())
     rounds.innerText = parseInt(rounds.innerText) + 1;
-
 })
 paperBtn.addEventListener('click', (e) => {
     playRound(e.target.innerText, computerPlay())
@@ -59,13 +59,11 @@ scissorsBtn.addEventListener('click', (e) => {
 //?     Either Player or Computer reaches 5 
 //?     Player Buttons should be greyed out upon reaching 5 wins (either computer or player)
 
-
-
 //logic
 function playRound(playerSelection, computerSelection) {
     roundOutcome.innerText = '';
     computerPlay(); //* it's a good idea to assign the value to a variable, whatever it is. Within the context of the round, you'll want that same string
-
+    computerChoice.innerText = computerSelection;
     if (playerSelection === 'Rock') {
         if (computerSelection === 'Rock') {
             roundOutcome.innerText = `Player's ${playerSelection} = Computer's ${computerSelection}`;
